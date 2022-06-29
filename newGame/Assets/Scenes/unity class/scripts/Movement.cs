@@ -6,10 +6,19 @@ public class Movement : MonoBehaviour
 {
     public float Speed;
     public float sprintSpeed = 10f;
+    public Rigidbody RB;
+    public float jumpForce = 3f;
+    public bool onGround = true;
     // Update is called once per frame
+    void Start()
+    {
+        RB = GetComponent<Rigidbody>();
+    }
+    
     void Update()   
     {
         PlayerMovement();
+        Jump();
     }
 
     void PlayerMovement()
@@ -29,6 +38,21 @@ public class Movement : MonoBehaviour
         
     }
 
+    void Jump()
+    {
+        if (Input.GetButtonDown("Jump") && onGround)
+        {
+            RB.AddForce(new Vector3(0,jumpForce,0), ForceMode.Impulse);
+            onGround = false;
+        }
+    }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Ground")
+        {
+            onGround = true;
+        }
+    }
 
 }
