@@ -11,7 +11,7 @@ public class lightAct : MonoBehaviour
     void Start()
     {
         lightingCheck = GetComponent<Light>();
-        juke = Player.GetComponent<AudioSource>();
+        juke = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
