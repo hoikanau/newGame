@@ -36,6 +36,7 @@ public class Movement : MonoBehaviour
             transform.Translate(playerMovement, Space.Self);
         }
         
+        
     }
 
     void Jump()
@@ -55,6 +56,11 @@ public class Movement : MonoBehaviour
         {
             onGround = true;
         }
+        // if(other.tag == "Ground" && other.gameObject.layer == 8)
+        // {
+        //     FindObjectOfType<soundManagerScript>().Play("grassSound");
+        // }
+
     }
 
 }
