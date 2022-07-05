@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
-  sprintSpeed: 5
+  sprintSpeed: 10
   RB: {fileID: 0}
   jumpForce: 3
   onGround: 1
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d306c4874fb4aebbc2edfa7c3df9ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zAnim: {fileID: 0}
+  zAnim: {fileID: 1117982371}
 --- !u!1001 &1774716370
 PrefabInstance:
   m_ObjectHideFlags: 0
