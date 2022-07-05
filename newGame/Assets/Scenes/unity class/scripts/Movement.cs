@@ -44,9 +44,9 @@ public class Movement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && onGround)
         {
             RB.AddForce(new Vector3(0,jumpForce,0), ForceMode.Impulse);
+            onGround = false;
             soundManagerScript.playSound ("jump");
             FindObjectOfType<soundManagerScript>().Play("jumped");
-            onGround = false;
         }
     }
 
