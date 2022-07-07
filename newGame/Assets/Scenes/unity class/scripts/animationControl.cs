@@ -6,24 +6,32 @@ public class animationControl : MonoBehaviour
 {
     public Animator zAnim;
     public bool isGrounded;
-    public bool onMap;
+    public bool onMap = true;
     // Start is called before the first frame update
     void Start()
     {
         zAnim = GetComponent<Animator>();
-        onMap = true;
+        zAnim.SetBool("onMap", true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("w"))
+        if(Input.GetKey("w") )
         {
             zAnim.SetBool("isWalking", true);
         }
         else
         {
             zAnim.SetBool("isWalking", false);
+        }
+        if(Input.GetKey("s") )  
+        {
+            zAnim.SetBool("isBacking", true);
+        }
+        else
+        {
+            zAnim.SetBool("isBacking", false);
         }
 
         if(Input.GetKey("w") && Input.GetKey(KeyCode.LeftShift))
@@ -68,8 +76,14 @@ public class animationControl : MonoBehaviour
     //         onMap = true;
     //     }
     // }
-    void OnTriggerExit(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        onMap = false;
+        if(other.tag == "offMap")
+        {
+            zAnim.SetBool("onMap", false);
+            // zAnim.SetBool("isWalking", false);
+            // zAnim.SetBool("isJumping", false);
+            // zAnim.SetBool("isRunning", false);
+        }
     }
 }

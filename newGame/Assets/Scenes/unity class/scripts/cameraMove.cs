@@ -8,6 +8,7 @@ public class cameraMove : MonoBehaviour
     float mouseX, mouseY;
     public float yLock1, yLock2;
     public Transform Target, Player;
+    public GameObject WinScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +18,17 @@ public class cameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        camControl();
+        if(WinScreen.activeSelf == true)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            camControl();
+        }
     }
 
     void camControl()
