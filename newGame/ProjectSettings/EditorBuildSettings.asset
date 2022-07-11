@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/unity class/Scene/WhackAMole.unity
     guid: 0100933d3ad644bb987258d3bb7ca9d6
+  - enabled: 1
+    path: Assets/Scenes/unity class/Scene/WAM Level 2.unity
+    guid: b932a8161de5ca04f8f63fe2510ed45d
   m_configObjects: {}

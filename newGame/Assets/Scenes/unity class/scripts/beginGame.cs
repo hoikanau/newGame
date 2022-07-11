@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class nextLevel : MonoBehaviour
+public class beginGame : MonoBehaviour
 {
     public void start()
     {
